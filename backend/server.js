@@ -23,12 +23,14 @@ app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
+__dirname = path.resolve();
+
 //this is for deployment purpose
 //to load static files from the front end(html,css,etc...)
-app.use(express.static(path.join(__dirname, "/front-end/dist")));
+app.use(express.static(path.join(__dirname, "/frontend/dist")));
 
 app.get("*", (req,res)=>{
-    res.sendFile(path.join(__dirname, "front-end", "dist", "index.html"))
+    res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"))
 })
 
 //now we are using socket server instead of express alone,
