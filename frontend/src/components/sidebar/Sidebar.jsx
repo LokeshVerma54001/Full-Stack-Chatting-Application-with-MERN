@@ -1,4 +1,5 @@
 import Conversations from "./Conversations"
+import EditButton from "./EditButton"
 import LogoutButton from "./LogoutButton"
 import SearchInput from "./SearchInput"
 
@@ -8,7 +9,10 @@ const Sidebar = () => {
       <SearchInput />
       <div className="divider px-3"></div>
       <Conversations />
-      <LogoutButton />
+      <div className="flex w-full justify-between  mt-auto">
+        <LogoutButton />
+        <EditButton />
+      </div>
     </div>
   )
 }
